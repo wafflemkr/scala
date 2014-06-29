@@ -1,0 +1,14 @@
+console
+submit david.kornbau@gmail.com def max(xs: List[Int]): Int = {
+  if (xs.isEmpty) throw new NoSuchElementException
+  else {
+    def inner(max: Int, list: List[Int]): Int = {
+      def compare(x: Int, y: Int): Int =
+        if (x > y) x
+        else y
+      if (list.isEmpty) max
+      else inner(compare(max, list.head), list.tail)
+    }
+    inner(xs.head, xs.tail)
+  } 
+submit david.kornbau@gmail.com Mhs9bPbNJd
